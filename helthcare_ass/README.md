@@ -6,6 +6,8 @@ This project is a web-based interface that allows users to:
 - Display patient details in a tabular format
 - View and analyze medical conditions like Sickle Cell Anemia visually
 
+# Project Link - https://ps-healthcare.netlify.app/
+
 ## 🧪 Features
 
 - Image upload and preview
