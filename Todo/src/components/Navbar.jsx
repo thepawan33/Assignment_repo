@@ -58,7 +58,7 @@ export default function Navbar() {
               }}
               to={"/cat"}
             >
-              Cat Image
+              Cat
             </Link>
           </Button>
         </Toolbar>

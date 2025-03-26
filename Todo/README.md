@@ -26,6 +26,7 @@ This is a fully functional Todo application built using React and Vite. The app 
 - **Routing:** React Router DOM
 - **Drag and Drop:** DnD Kit
 - **Styling:** Module CSS
+- **API Handling:** createAsyncThunk
 
 ## 📂 Folder Structure
 

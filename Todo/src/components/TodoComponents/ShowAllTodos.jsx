@@ -5,23 +5,20 @@ import styles from "./css/ShowAllTodos.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { completeTodoDelete } from "../../redux/slices/todoSlice";
 
-import useAlertHandler from "../reusable/Alert/useAlertHandler";
-import AlertComponent from "../reusable/Alert/AlertComponent";
+import { openAlert } from "../../utils/openAlert";
 
 export default function ShowAllTods() {
   const doneTodosList = useSelector((state) => state.todo.doneTodos);
-  const showAlert = useAlertHandler();
 
   const dispatch = useDispatch();
 
   const deleteCompleteTodo = (id) => {
     dispatch(completeTodoDelete(id));
-    showAlert(true, "success", "Delete Done :)");
+    openAlert(dispatch, "success", "Delete Done :)");
   };
 
   return (
     <div className={styles.container}>
-      <AlertComponent />
       <div className={styles.allTodo}>
         <h2 className={styles.h2}>All Task</h2>
         <DraggableTodo />

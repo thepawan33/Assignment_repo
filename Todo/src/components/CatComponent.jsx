@@ -1,48 +1,36 @@
-import React, { useState } from "react";
-import { Button, Box, Card, CardMedia, Typography } from "@mui/material";
-import AlertComponent from "./reusable/Alert/AlertComponent";
-import useAlertHandler from "./reusable/Alert/useAlertHandler";
-import axios from "axios";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import Box from "@mui/material/Box";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+
+import { useSelector, useDispatch } from "react-redux";
+import { fetchCatImage } from "../redux/slices/catSlice";
 
 const CatComponent = () => {
-  let [catImage, setCatImage] = useState(null);
-  const showAlert = useAlertHandler();
+  const dispatch = useDispatch();
 
-  async function catImg() {
-    try {
-      const response = await axios.get(
-        "https://api.thecatapi.com/v1/images/search"
-      );
+  const { loading, url } = useSelector((state) => state.cat);
 
-      if (response) {
-        const { data } = response;
-        setCatImage(data[0].url);
-        showAlert(true, "success", "New Cat Image");
-      }
-    } catch (error) {
-      showAlert(true, "error", error.message);
-    }
-  }
+  const handleCatImage = () => {
+    dispatch(fetchCatImage());
+  };
 
   return (
     <Box sx={{ textAlign: "center", mt: 4, mb: 15 }}>
-      <AlertComponent />
       <Typography variant="h4" gutterBottom>
         Random Cat Image
       </Typography>
-      <Button onClick={catImg} variant="contained" sx={{ mb: 2 }}>
+      <Button
+        loading={loading}
+        onClick={handleCatImage}
+        variant="contained"
+        sx={{ mb: 2 }}
+      >
         Get Cat Image
       </Button>
       <Card sx={{ maxWidth: 400, mx: "auto", mt: 2 }}>
-        <CardMedia
-          component="img"
-          image={
-            catImage
-              ? catImage
-              : "https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg"
-          }
-          alt="Random Cat"
-        />
+        <CardMedia component="img" image={url} alt="Random Cat" />
       </Card>
     </Box>
   );

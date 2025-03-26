@@ -1,5 +1,12 @@
-import { Box, Container, Typography, IconButton } from "@mui/material";
-import { Email, LinkedIn, GitHub, Language } from "@mui/icons-material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+
+import Email from "@mui/icons-material/Email";
+import LinkedIn from "@mui/icons-material/LinkedIn";
+import GitHub from "@mui/icons-material/GitHub";
+import Language from "@mui/icons-material/Language";
 
 export default function Footer() {
   return (

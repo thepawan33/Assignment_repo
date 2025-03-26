@@ -11,8 +11,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { useDispatch } from "react-redux";
 import { deleteTodo, completeTodo } from "../../../redux/slices/todoSlice";
 
-import useAlertHandler from "../../reusable/Alert/useAlertHandler";
-import AlertComponent from "../../reusable/Alert/AlertComponent";
+import { openAlert } from "../../../utils/openAlert";
 
 export default function TodoValue({
   id,
@@ -31,16 +30,15 @@ export default function TodoValue({
   };
 
   const dispatch = useDispatch();
-  const showAlert = useAlertHandler();
 
   const handleDeleteTodo = () => {
     dispatch(deleteTodo(id));
-    showAlert(true, "success", "Task Deleted Done ");
+    openAlert(dispatch, "success", "Task Deleted Done ");
   };
 
   const handleCompleteTodo = () => {
     dispatch(completeTodo(id));
-    showAlert(true, "success", "Congratulation Task Completed");
+    openAlert(dispatch, "success", "Congratulation Task Completed");
   };
 
   return (
@@ -76,7 +74,6 @@ export default function TodoValue({
         <IconButton onMouseDown={handler ? handler : handleDeleteTodo}>
           <DeleteIcon sx={{ color: "rgba(255, 0, 0, 0.67)" }} />
         </IconButton>
-        <AlertComponent />
       </span>
     </div>
   );
