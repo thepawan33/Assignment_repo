@@ -35,20 +35,21 @@ This is a fully functional Todo application built using React and Vite. The app 
   ├── pages/              # Manages pages
   ├── components/         # Contains reusable components
   ├── resuableComponents/ # Manages buttons and other shared components
-  ├── public/      # Stores static files
+  ├── public/             # Stores static files
   ├── App.js              # Main application component
   ├── index.js            # Entry point
+  ├── redux/              # Manages global state using Redux
 ```
 
 ## 📦 Installation
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/thepawan33/Todo_Assignment.git
+   git clone https://github.com/thepawan33/Assignment_repo.git
    ```
 2. Navigate to the project directory:
    ```sh
-   cd todo-app
+   cd Todo
    ```
 3. Install dependencies:
    ```sh
