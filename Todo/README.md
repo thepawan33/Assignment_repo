@@ -6,7 +6,7 @@ This is a fully functional Todo application built using React and Vite. The app 
 
 ## Project Link
 
-[https://ps-todo-app.netlify.app]
+[https://ps-todos.netlify.app/]
 
 ## 🏗️ Features
 
