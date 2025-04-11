@@ -2,6 +2,8 @@
 
 A modern React web application to generate and download customized student ID cards with personal details, photo, and QR code. Includes multiple templates and full download support in image format.
 
+## Project Link - [https://ps-studentid.netlify.app/]
+
 ## ✨ Features
 
 - ✅ Student data entry with live preview
@@ -23,8 +25,7 @@ A modern React web application to generate and download customized student ID ca
 ## 🛆 Installation
 
 ```bash
-git clone https://github.com/your-username/id-card-generator.git
-cd id-card-generator
+git clone https://github.com/thepawan33/Assignment_repo.git/Student_Id_Gen
 npm install
 npm run dev
 ```
