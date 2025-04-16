@@ -7,10 +7,21 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-import { allStocks } from "../utils/allStockList";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
+import { useSelector, useDispatch } from "react-redux";
+import { handlerOpener, handleFilter } from "../redux/slices/stockSlice";
+
 export default function StockListTable() {
+  const allStock = useSelector((state) => state.stock.allStocks);
+
+  const dispatch = useDispatch();
+
+  const handleClick = (stock) => {
+    dispatch(handlerOpener());
+    dispatch(handleFilter(stock));
+  };
+
   const headingStyle = { fontWeight: "550", fontSize: "large" };
 
   return (
@@ -40,9 +51,14 @@ export default function StockListTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {allStocks?.map((stock) => {
+            {allStock?.map((stock) => {
               return (
-                <TableRow>
+                <TableRow
+                  key={stock.name}
+                  hover
+                  onClick={() => handleClick(stock.name)}
+                  sx={{ cursor: "pointer" }}
+                >
                   <TableCell>
                     <img
                       src={stock.logo}
@@ -52,9 +68,8 @@ export default function StockListTable() {
                     {stock.name}
                   </TableCell>
                   <TableCell>
-                    {" "}
                     <CurrencyRupeeIcon sx={{ fontSize: "15px" }} />
-                    {stock.price.toLocaleString("en-in")}
+                    {stock.value.toLocaleString("en-in")}
                   </TableCell>
                   <TableCell
                     sx={stock.up ? { color: "green" } : { color: "red" }}

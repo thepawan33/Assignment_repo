@@ -1,12 +1,88 @@
-# React + Vite
+# 📊 Stock Market Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a responsive stock market dashboard built using **React**, **Vite**, **Redux Toolkit**, and **Material UI**. The project features real-time stock fluctuations, candlestick chart visualization, and data filtering for top gainers and losers.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Link - https://ps-livestock.netlify.app
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔁 Real-time stock value updates (every 2 seconds)
+- 📈 Interactive candlestick charts (AG Charts)
+- 📋 List of all stocks with dynamic price movement
+- 📊 Top gainers & losers section
+- 📉 Indices overview (e.g., NSE, BSE)
+- 📱 Fully responsive design with media query support
+- 📦 Redux state management
+
+---
+
+## 🛠 Tech Stack
+
+- **React** (w/ Vite)
+- **Redux Toolkit**
+- **Material UI (MUI)**
+- **AG Charts**
+- **Tailwind CSS**
+- **JavaScript**
+
+---
+
+## 🖥️ Screenshots
+
+> _(Add your project screenshots here if you like)_
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+    ├───components
+    │   ├───gainerLoser
+    │   ├───header
+    │   ├───indices
+    │   ├───reusable
+    │   └───StockInfo
+    ├───redux
+    │   └───slices
+    └───utils
+└── App.jsx
+```
+
+---
+
+## 📦 Installation & Run Locally
+
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/thepawan33/Assignment_repo.git
+   cd treading_app
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🔗 Links
+
+- [Live Demo](https://ps-livestock.netlify.app/)
+- [LinkedIn](https://www.linkedin.com/in/pavan-singh-44172b243)
+- [Portfolio](https://ps-personal.netlify.app/)
+
+---
+
+## 📃 License
+
+This project is for educational and assignment purposes.
